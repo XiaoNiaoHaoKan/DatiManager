@@ -7,7 +7,7 @@ const accountRoutes = require('./Routes/accountRoutes');
 const museumRoutes = require('./Routes/museumRoutes');
 const staffRoutes = require('./Routes/staffRoutes');
 
-const PORT = process.env.PORT || 8010;
+const PORT = process.env.PORT || 8003;
 
 const app = express();
 app.use(cors());

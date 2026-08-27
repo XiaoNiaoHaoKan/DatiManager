@@ -27,6 +27,7 @@ async function createStaffAccount(req, res) {
   }
 
   const account = await StaffAccount.create({
+    username: `staff:${normalizedEmail}`,
     email: normalizedEmail,
     passwordHash: hashPassword(password),
     museumId
