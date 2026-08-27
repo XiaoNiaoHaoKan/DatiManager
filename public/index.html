@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gestione Database ArtAround</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Gestione Account &amp; Musei</h1>
+
+  <section>
+    <h2>Musei</h2>
+    <p>Un museo unico, condiviso da marketplace, staff editor (Jack) e navigator: lo stesso id viene usato nel QR generato dallo staff e come <code>museumId</code> su contenuti e visite.</p>
+    <form id="museum-form">
+      <input name="name" placeholder="Nome museo" required />
+      <input name="city" placeholder="Città" />
+      <input name="description" placeholder="Descrizione" />
+      <input name="entry" placeholder="Indirizzo / ingresso" />
+      <button type="submit">Crea museo</button>
+    </form>
+    <table id="museum-table">
+      <thead><tr><th>Id</th><th>Nome</th><th>Città</th><th>Descrizione</th><th>Ingresso</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Account Marketplace</h2>
+    <form id="account-form">
+      <input name="username" placeholder="Username" required />
+      <input name="password" placeholder="Password" required />
+      <select name="role">
+        <option value="visitor">Visitatore</option>
+        <option value="author">Autore</option>
+        <option value="admin">Admin</option>
+        <option value="other">Altro</option>
+      </select>
+      <input name="credit" type="number" step="0.01" placeholder="Credito iniziale" value="0" />
+      <button type="submit">Crea account</button>
+    </form>
+    <table id="account-table">
+      <thead><tr><th>Username</th><th>Ruolo</th><th>Credito</th><th>Museo</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Account Staff (accesso a Jack / editor)</h2>
+    <form id="staff-account-form">
+      <input name="email" type="email" placeholder="Email" required />
+      <input name="password" placeholder="Password" required />
+      <select name="museumId" id="staff-museum-select" required></select>
+      <button type="submit">Crea account staff</button>
+    </form>
+    <table id="staff-account-table">
+      <thead><tr><th>Email</th><th>Museo</th><th></th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
