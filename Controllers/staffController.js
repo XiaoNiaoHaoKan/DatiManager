@@ -4,7 +4,10 @@ const { hashPassword } = require('../utils/passwordHash');
 
 // GET /api/staff/accounts
 async function listStaffAccounts(req, res) {
-  const accounts = await StaffAccount.find().select('-passwordHash').populate('museumId', 'name city').sort({ email: 1 });
+  const accounts = await StaffAccount.find({
+    email: { $exists: true },
+    passwordHash: { $exists: true }
+  }).select('-passwordHash').populate('museumId', 'name city').sort({ email: 1 });
   res.json(accounts);
 }
 
